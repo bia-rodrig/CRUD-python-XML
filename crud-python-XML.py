@@ -66,8 +66,6 @@ def update_contact():
 	root = tree.getroot()
 	for child in root.findall('Contact'):
 		if child.find('ID').text == select_id:
-		#for element in child:
-			#if (element.tag == 'ID' and element.text == select_id):
 			print('\nContact selected:')
 			selected_child = child
 			for item in child:
@@ -95,7 +93,6 @@ def delete_contact():
 	for child in root:
 		for element in child:
 			if (element.tag == 'ID' and element.text == select_id):
-				#print('{}: {}'.format(element.tag, element.text))
 				root.remove(child)
 				print('Contact removed')
 	tree.write(filename)
